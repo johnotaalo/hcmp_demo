@@ -1,0 +1,35 @@
+body{
+	font-family: Helvetica;
+}
+#chartsspace{
+	width: 50%;
+	height: 50%;
+}
+#container1{
+			float:left;
+			
+		}
+#container2{
+			float:left;
+			
+		}
+#container3{
+			float:left;
+			
+		}
+#container4{
+			float:left;
+			
+		}
+#facilityheader{
+	width: 100%;
+	color: white;
+	background-color:#08298A;
+	clear: both;
+}
+#trainingheader{
+	width: 100%;
+	color: white;
+	background-color:#08298A;
+	clear: both;
+}

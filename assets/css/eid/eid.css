@@ -1,0 +1,123 @@
+#inner_wrapper {
+	width: 99%;
+	height: auto;
+	margin: 0 auto;
+	padding: 1em 0 1em 0 min-height : 480px;
+	position: relative;
+	overflow: auto;
+	font: 8px /1.231 arial, helvetica, clean, sans-serif;
+}
+#eid_container>.eid_sidebar>.well>ul>.nav-header{
+	display: block;
+	padding: 3px 15px;
+	font-size: 11px;
+	font-weight: bold;
+	line-height: 20px;
+	color: rgb(0, 0, 204);
+}
+#cont_submission_report{
+	width: 70% !important;	
+}
+.eid_sidebar>.well>.nav-list{
+	padding-left:0px;
+}
+.nav-list > .side_menu {
+	padding: 7px 5px;
+}
+.side_menu{
+	border-bottom: 1px solid #ddd;
+}
+.sidebar_title>select{
+	border-radius:0px;
+}
+#eid_content_menus{
+	margin-bottom:20px;
+}
+#subm_testing_lab{
+	color:#FF3300;
+}
+
+.breadcrumb>.active{
+	font:bold 1.2em sans-serif;
+}
+
+#eid_content_menus>li.active>a{
+	color:#eb8f00;
+	background-color: lavender;
+}
+table,tr, td, table>thead>tr,table>thead>tr>th,table>tbody>tr>td{
+	border-radius:0px;
+}
+.nav-list .divider{
+	margin:0px;
+}
+.well{
+	background-color:#FFFFFF;
+	border-radius: 0px;
+}
+ul.tabbed {
+	display: inline;
+	margin: 0;
+}
+#sub-nav li:first-child {
+	margin-left: 0;
+}
+ul.tabbed li {
+	float: left;
+}
+#sub-nav li {
+	margin: 0 1em;
+}
+#sub-nav li>a:hover{
+	color:black;
+}
+ul.tabbed li {
+	list-style: none;	
+	margin-top: 0;
+}
+#sub-nav a {
+	font-size: 1.2em;
+	text-decoration: none;
+}
+.navigation a {
+	color: #888;
+	text-decoration: none;
+}
+select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input{
+	margin-bottom: 0px;
+	height:30px !important;
+	border-radius:1px !important;
+}
+.input-lg{
+	padding:0px !important;
+	font-size: inherit !important;
+	
+}
+.table th, .table td{
+	padding:3px !important;
+	vertical-align:middle !important;
+}
+input.input-small{
+	border: thin;
+	border-color: #333;
+	border-style: ridge;
+	padding: 4px 4px 4px 4px;
+	border-radius: 0px !important;
+}
+.submission_title{
+	font-weight:bold;
+	text-transform:uppercase;
+	font-family:sans-serif;
+	line-height: 2;
+}
+.notice {
+	background: #FFF6BF;
+	color: #514721;
+	border-color: #FFD324;
+	border: 1px solid #DDD;
+	margin-bottom: 1em;
+	padding: 0.2em 0.8em;
+}
+.approve-lab:hover{
+	color:blue;
+}

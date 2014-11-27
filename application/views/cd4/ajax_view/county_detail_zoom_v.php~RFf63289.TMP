@@ -1,0 +1,280 @@
+<SCRIPT LANGUAGE="Javascript" SRC="<?php echo base_url();?>Scripts/FusionCharts/FusionCharts.js"></SCRIPT>
+<script type="text/javascript" language="javascript" src="<?php echo base_url(); ?>Scripts/jquery.dataTables.js"></script>
+		<style type="text/css" title="currentStyle">
+			
+			@import "<?php echo base_url(); ?>DataTables-1.9.3 /media/css/jquery.dataTables.css";
+		</style>
+		<style>
+
+			.warning2 {
+	background: #FEFFC8 url('<?php echo base_url()?>Images/excel-icon.jpg') 20px 50% no-repeat;
+	border: 1px solid #F1AA2D;
+	}
+		</style>
+
+		<script type="text/javascript" charset="utf-8">
+			
+		
+
+		//	$(document).ready(function() {
+				/* Build the DataTable with third column using our custom sort functions */
+		/*		$('#example_main').dataTable( {
+					"bJQueryUI": true,
+					"bPaginate": false
+				} );
+	
+						$(".ajax_call_1").click(function(){
+							var id  = $(this).attr("id"); 
+							
+							if(id=="county_facility"){
+								
+  	                         var url= $(this).attr("name"); 
+  	
+  	                     ajax_request_special (url);
+  	                  return;
+                        }
+	
+	});
+	 
+	
+ 		function ajax_request_special (url){
+	var url =url;
+	 $.ajax({
+          type: "POST",
+          url: url,
+          beforeSend: function() {
+            $("#dialog").html("");
+          },
+          success: function(msg) {
+
+        	
+        	$('#dialog').html(msg);
+            $( "#dialog" ).dialog({
+			height: 650,
+			width:900,
+			modal: true
+		});
+          }
+        }); 
+} 
+*/
+$( "#filter-b" )
+			.button()
+			.click(function() {
+				alert("this");				
+});	
+
+	});
+	</script>
+	<style>
+	.chart_content{
+		margin:0 auto;
+		margin-left: 0px;
+	}
+	.multiple_chart_content{
+		float:left; 
+	}
+</style>
+
+	
+		<div id="dialog"></div> 
+Select County:	<select id="#filter-b">
+ 
+ 
+ <?php foreach ($counties as $countiesarr) {
+ 	
+ ?>
+<option><?phpecho $countiesarr[0]; ?></option>
+ <?php } ?>
+	</select>
+ 
+Select Facility:	
+<select id="#filter-b">
+ <option>Naivasha District Hospital</option>
+<option>Mikindani Catholic Clinic</option>
+<option>Kiambu District Hospital</option>
+<option>Mathari Mental Hospital</option>
+</select>
+
+<fieldset style="font-size: 14px;background: #FCF8F8;padding: 10px;">
+<span><b>DEVICE :</b> BD FACS CALIBUR</span><br />
+<span><b>FACILITY :</b> ['=facility selected']</span><br />
+<span><b>MFL : 11290</b></span><br />
+<span><b>OWNER: GOK</b></span><br />
+</fieldset>
+
+				<table  style="margin-left: 0;" id="example_main" width="100%" class="data-table">
+				<thead>
+				<th>&nbsp; </th>
+				<th>Quantity Received(3 months av)</th>
+				<th>Quantity Consumed</th>
+				<th>End Balance(June)</th>
+				<th>Requested</th>
+				<th>Allocated</th>
+			 
+					</thead>
+					<tr>
+						<td>Reagent 1</td>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+						<td><input type="text"/></td>
+					</tr>
+					<tr>
+						<td>Reagent 2</td>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+						<td><input type="text"/></td>
+					</tr>
+					<tr>
+						<td>Reagent 3</td>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+						<td><input type="text"/></td>
+					</tr>
+					<tr>
+						<td>Reagent 4</td>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+						<td><input type="text"/></td>
+					</tr>
+					<tbody>
+			<?php 
+			//foreach($facility as $facility_detail){
+			//echo "<tr><td><a class='ajax_call_1' id='county_facility' name='".base_url()."cd4_management/get_cd4_facility_detail/$facility_detail[facility_code]' href='#'>$facility_detail[facility_code]</a></td><td>$facility_detail[facility_name]</td><td>$facility_detail[facility_owner]</td>";
+			//} ?>
+			 
+			</tbody>
+			</table>
+<!--			 <input type="submit" value="allocate" />-->
+			 <input class="button ui-button ui-widget ui-state-default ui-corner-all" id="allocate" value="Allocate" role="button" aria-disabled="false">
+
+			 <fieldset style="font-size: 14px;background: #FCF8F8;padding: 10px;">
+<span><b>DEVICE :</b> BD FACS CALIBUR</span><br />
+<span><b>FACILITY :</b> ['=facility selected']</span><br />
+<span><b>MFL : 11290</b></span><br />
+<span><b>OWNER: GOK</b></span><br />
+</fieldset>
+
+				<table  style="margin-left: 0;" id="example_main" width="100%" class="data-table">
+				<thead>
+				<th>&nbsp; </th>
+				<th>Quantity Received(3 months av)</th>
+				<th>Quantity Consumed</th>
+				<th>End Balance(June)</th>
+				<th>Requested</th>
+				<th>Allocated</th>
+			 
+					</thead>
+					<tr>
+						<td>Reagent 1</td>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+						<td><input type="text"/></td>
+					</tr>
+					<tr>
+						<td>Reagent 2</td>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+						<td><input type="text"/></td>
+					</tr>
+					<tr>
+						<td>Reagent 3</td>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+						<td><input type="text"/></td>
+					</tr>
+					<tr>
+						<td>Reagent 4</td>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+						<td><input type="text"/></td>
+					</tr>
+					<tbody>
+			<?php 
+			//foreach($facility as $facility_detail){
+			//echo "<tr><td><a class='ajax_call_1' id='county_facility' name='".base_url()."cd4_management/get_cd4_facility_detail/$facility_detail[facility_code]' href='#'>$facility_detail[facility_code]</a></td><td>$facility_detail[facility_name]</td><td>$facility_detail[facility_owner]</td>";
+			//} ?>
+			 
+			</tbody>
+			</table>
+<!--			 <input type="submit" value="allocate" />-->
+			 <input class="button ui-button ui-widget ui-state-default ui-corner-all" id="allocate" value="Allocate" role="button" aria-disabled="false">
+
+
+<fieldset style="font-size: 14px;background: #FCF8F8;padding: 10px;">
+<span><b>DEVICE :</b> BD FACS Count</span><br />
+<span><b>FACILITY :</b> ['=facility selected']</span><br />
+<span><b>MFL : 11290</b></span><br />
+<span><b>OWNER: GOK</b></span><br />
+</fieldset>
+<form>
+				<table  style="margin-left: 0;" id="example_main" width="100%" class="data-table">
+				<thead>
+				<th>&nbsp; </th>
+				<th>Quantity Received(3 months av)</th>
+				<th>Quantity Consumed</th>
+				<th>End Balance(June)</th>
+				<th>Requested</th>
+				<th>Allocated</th>
+			 
+					</thead>
+					<tr>
+						<td>Reagent 1</td>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+						<td><input type="text"/></td>
+					</tr>
+					<tr>
+						<td>Reagent 2</td>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+						<td><input type="text"/></td>
+					</tr>
+					<tr>
+						<td>Reagent 3</td>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+						<td><input type="text"/></td>
+					</tr>
+					<tr>
+						<td>Reagent 4</td>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+						<td><input type="text"/></td>
+					</tr>
+					<tbody>
+			<?php 
+			//foreach($facility as $facility_detail){
+			//echo "<tr><td><a class='ajax_call_1' id='county_facility' name='".base_url()."cd4_management/get_cd4_facility_detail/$facility_detail[facility_code]' href='#'>$facility_detail[facility_code]</a></td><td>$facility_detail[facility_name]</td><td>$facility_detail[facility_owner]</td>";
+			//} ?>
+			 
+			</tbody>
+			</table>
+<!--			 <input type="submit" value="allocate" />-->
+			 <input class="button ui-button ui-widget ui-state-default ui-corner-all" id="allocate" value="Allocate" role="button" aria-disabled="false">
+
+</form>

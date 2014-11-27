@@ -1,0 +1,129 @@
+
+<SCRIPT LANGUAGE="Javascript" SRC="<?php echo base_url();?>Scripts/FusionCharts/FusionCharts.js"></SCRIPT>
+<script type="text/javascript" language="javascript" src="<?php echo base_url(); ?>Scripts/jquery.dataTables.js"></script>
+		<style type="text/css" title="currentStyle">
+			
+			@import "<?php echo base_url(); ?>DataTables-1.9.3 /media/css/jquery.dataTables.css";
+ 
+	 #allocated{
+	 	background: #D1F8D5;
+        }
+		</style>
+
+
+		<style type="text/css" title="currentStyle">
+			
+			@import "<?php echo base_url(); ?>DataTables-1.9.3 /media/css/jquery.dataTables.css";
+						.user2{
+	width:70px;
+	
+	text-align: center;
+	}
+	 #allocated{
+	 	background: #D1F8D5;
+        }
+
+        	.allocation-months-list{
+		list-style: none;
+		font-size: 9px;
+		font-family: verdana;
+
+	}
+	.allocation-months-list a{
+
+	}
+
+	.allocation-months-list a:active{
+		border-left: solid 4px rgb(71, 224, 71);
+
+		background: #EEF1DF;
+	}
+	.allocation-months-list li{
+		border-left: solid 4px darkgreen;
+		padding-left: 7px;
+		margin-bottom: 1px
+	}
+
+	.allocation-months-list li:hover{
+		background: #EEF1DF;
+	}
+
+			</style>
+			<script type="text/javascript" charset="utf-8">
+			
+			$(function() { 
+
+//				$("#notif").delay(4000).hide();
+				setTimeout( "$('#notif').hide();", 4000);
+
+				/* Build the DataTable with third column using our custom sort functions */
+				$('#cd4_allocs').dataTable( {
+					"bJQueryUI": true,
+					"aaSorting": [[ 10, "desc" ]],
+					"bPaginate": false} );				
+			 
+				 
+		 
+								
+			} );
+			
+			</script>
+
+<div style="float:left;bacground=#fff;">
+<h2>Months</h2>
+	<ul class="allocation-months-list">
+	<li><a href="#July" class="allocate" onclick="showpreview(12121212)">July</a></li>
+	<li><a href="#Aug" class="allocate" onclick="showpreview(12121212)">Aug</a></li>
+	<li><a href="#Sept" class="allocate" onclick="showpreview(12121212)">Sept</a></li>
+	<li><a href="#Oct" class="allocate" onclick="showpreview(12121212)">Oct</a></li>
+	<li><a href="#Nov" class="allocate" onclick="showpreview(12121212)">Nov</a></li>
+
+	</ul>
+</div>
+<div class="dash_main" style="width: 80%;float: right;">
+<?php if (isset($_GET['allocationsuccess'])){?>
+<span id="notif" style="
+    font-size: 20px;
+    color: #82DA71;
+    background: #F7F5C8;
+    padding-left: 9px;
+    /* padding-right: 9px; */
+    position: relative;
+    float: left;
+    padding-top: 7px;
+    width: 100%;
+    border: solid 1px #C5C5C5;
+    height: 26px;
+    margin-top: 3px;
+">Allocation Succesful</span>
+<?php }?>
+<button></button>
+<table class="data-table" id="cd4_allocs">
+<thead>
+<th>Facility</th>
+<th>MFLCode</th>
+<th>Reagent</th>
+<th>qty</th>
+<th>allocation_for</th>
+<th>Action</th>
+</thead>
+<tbody>
+<?php 
+foreach ($allocations as $key => $allocations_details) {
+//echo "<pre>";var_dump($allocations_details);echo "</pre>";
+echo'<tr>
+<td>'.$allocations_details['facilityname'].'</td>
+<td>'.$allocations_details['MFLCode'].'</td>
+<td>'.$allocations_details['reagentname'].'</td>
+<td>'.$allocations_details['qty'].'</td>
+<td>July 2013</td>
+<td><a>Send mail</a></td>
+
+<tr/>';
+}?>
+</tbody>
+</table>
+</div>
+<?php 
+//echo"<pre>";var_dump($allocations);echo"</pre>";
+?>

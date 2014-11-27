@@ -1,0 +1,14 @@
+[{"receipients":"All Users","name":"user","id":"1"},
+{"receipients":"All SCMLTs","name":"user","id":"2"},
+{"receipients":"All CLCs","name":"user","id":"3"},
+{"receipients":"Sub-Counties with More than 75% Reporting","name":"user","id":"4"},
+{"receipients":"Sub-Counties with Less than 75% Reporting","name":"user","id":"5"},
+{"receipients":"Sub-Counties with Less than 50% Reporting","name":"user","id":"6"},
+{"receipients":"Sub-Counties with Less than 25% Reporting","name":"user","id":"7"},
+{"receipients":"Counties with More than 75% Reporting","name":"user","id":"8"},
+{"receipients":"Counties with Less than 75% Reporting","name":"user","id":"9"},
+{"receipients":"Counties with Less than 50% Reporting","name":"user","id":"10"},
+{"receipients":"Counties with Less than 25% Reporting","name":"user","id":"11"},
+{"receipients":"Counties with 0% Reporting","name":"user","id":"12"},
+{"receipients":"Sub-Counties with 0% Reporting","name":"user","id":"13"}
+]
