@@ -25,7 +25,7 @@ class orders extends MY_Controller {
 
 	public function index() {
 		$test= $this -> hcmp_functions -> create_order_delivery_color_coded_table(1);
-		echo $test['table'];
+		// echo $test['table'];
 	}
 	
 	public function test_read_write_excel(){
