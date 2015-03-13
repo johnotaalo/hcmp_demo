@@ -8,34 +8,17 @@
     <meta name="author" content="">   
     <!-- Bootstrap core CSS -->  
     <link rel="icon" href="<?php echo base_url().'assets/img/coat_of_arms.png'?>" type="image/x-icon" />
-    <link href="<?php echo base_url().'assets/css/style.css'?>" type="text/css" rel="stylesheet"/> 
-    <link href="<?php echo base_url().'assets/css/offline.css'?>" type="text/css" rel="stylesheet"/> 
-    <link href="<?php echo base_url().'assets/css/select2.css'?>" type="text/css" rel="stylesheet"/> 
-    <link href="<?php echo base_url().'assets/css/offline-language-english.css'?>" type="text/css" rel="stylesheet"/>  
-    <link href="<?php echo base_url().'assets/css/offline-language-english.css'?>" type="text/css" rel="stylesheet"/> 
-
-    <link href="<?php echo base_url().'assets/css/offline.css'?>" type="text/css" rel="stylesheet"/> 
-    <link href="<?php echo base_url().'assets/css/normalize.css'?>" type="text/css" rel="stylesheet"/>
-    <link href="<?php echo base_url().'assets/css/dashboard.css'?>" type="text/css" rel="stylesheet"/>
-    <link href="<?php echo base_url().'assets/css/jquery-ui-1.10.4.custom.min.css'?>" type="text/css" rel="stylesheet"/>
-    <link href="<?php echo base_url().'assets/boot-strap3/css/bootstrap.min.css'?>" type="text/css" rel="stylesheet"/>
-    <link href="<?php echo base_url().'assets/boot-strap3/css/bootstrap-responsive.css'?>" type="text/css" rel="stylesheet"/>
+    <link href="<?php echo base_url().'assets/bower_components/semantic/packaged/css/semantic.css'?>" type="text/css" rel="stylesheet"/>
     <link href="<?php echo base_url().'assets/font-awesome/css/font-awesome.min.css'?>" type="text/css" rel="stylesheet"/>
+    <link href="<?php echo base_url().'assets/bower_components/ionicons-2.0.0/css/ionicons.css'?>" type="text/css" rel="stylesheet"/>
     <link href="<?php echo base_url().'assets/datatable/TableTools.css'?>" type="text/css" rel="stylesheet"/>
     <link href="<?php echo base_url().'assets/datatable/dataTables.bootstrap.css'?>" type="text/css" rel="stylesheet"/>
     <script src="<?php echo base_url().'assets/scripts/jquery.js'?>" type="text/javascript"></script>
     <script src="<?php echo base_url().'assets/scripts/pace.js'?>" type="text/javascript"></script>
-     <script src="<?php echo base_url().'assets/scripts/offline.js'?>" type="text/javascript"></script>
-     <script src="<?php echo base_url().'assets/scripts/select2.js'?>" type="text/javascript"></script>
-    <script src="<?php echo base_url('assets/scripts/county_sub_county_functions.js')?>" type="text/javascript"></script>
     <script src="<?php echo base_url();?>assets/FusionCharts/FusionCharts.js" type="text/javascript"></script>
      <script src="<?php echo base_url().'assets/scripts/pace.js'?>" type="text/javascript"></script>
-     <script src="<?php echo base_url().'assets/scripts/offline.js'?>" type="text/javascript"></script>
-     <script src="<?php echo base_url().'assets/scripts/select2.js'?>" type="text/javascript"></script>
-    <script src="<?php echo base_url().'assets/scripts/offline.js'?>" type="text/javascript"></script>
-     <script src="<?php echo base_url().'assets/scripts/select2.js'?>" type="text/javascript"></script>
-    
-     
+    <script src="<?php echo base_url().'assets/bower_components/semantic/packaged/javascript/semantic.js'?>" type="text/javascript"></script>
+     <script src="<?php echo base_url().'assets/scripts/hcmp_shared_functions.js'?>" type="text/javascript"></script>
     <title>HCMP | National</title>
 <script>
    paceOptions = {
@@ -67,11 +50,14 @@
     var url="<?php echo base_url(); ?>";
     </script>
 <style>
+a ,u {
+	text-decoration: none !important;
+}
 	.active-panel{
     	border-left: 6px solid #36BB24;
     }
     body {
-padding-top: 4.5%;
+    	font-family: "Segoe UI Light","Segoe UI","Segoe WP","Helvetica Neue",sans-serif;
 }
 
 .modal-content,.form-control
@@ -118,391 +104,355 @@ h4{
 	}
 	.modal-dialog {
 		
-		width: 74%;
+		width: 85%;
 	}
+	.statistic{
+		display: inline-block;
+		text-align: center;
+		cursor: pointer;
+	}
+	.statistic .label{
+		color:black;
+		font-weight: 400;
+	}
+	.statistic .value{
+		font-size:1.7rem;
+		font-weight: 800;
+	}
+	.corner-label{
+		background-color: #5cb85c;
+		border-color: #4cae4c;
+		color:white;
+		text-align: center;
+		height:10%;
+		padding: 15 2 2 2;
+		width: 36;
+		margin-right:0.5%;
+		font-size:1.3rem;
+		cursor: pointer;
+	}
+	.tabs-style-bar nav ul li.tab-current a {
+	background: #4CAE4C;
+	color: #fff;
+}
+.tile-header{
+	background-color: #f7f7f7;
+	height:25px;
+	font-size:1.3rem;
+	text-align: center;
+	font-weight: 800;
+}
 	</style>
+	
+		
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    
   </script>
+  
   
   </head>
   
   <body screen_capture_injected="true" style="background-color: white;">
-  	
-  	<div class="container-fluid navbar-default navbar-fixed-top" role="navigation" style="background-color:white">
-        <div class="container-fluid">
-            <div class="navbar-header" id="st-trigger-effects">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand " href="<?php echo base_url().'national';?>" >HCMP</a>
-
-        </div>
-        <div class="navbar-header" >
+<div class="ui stackable four column grid" >
+	
+	  <div class="four wide column" style="margin-top: 0">
+	  	<div class="ui grid">
+	  		<div class="three wide column">
+	  			<div class="item" style=""><a href="<?php echo base_url().'national';?>" style="">   
+           						 <img style="display:inline-block;"  src="<?php echo base_url();?>assets/img/coat_of_arms_dash.png" 
+           						 class="img-responsive " alt="Responsive image" id="logo" ></a></div>
+	  		</div>
+	  		<div class="ten wide column">
+	  			<div style="margin-top: 12">Ministry of Health</div>
+	  		</div>
+	  	</div>
+	  	
+	  	
+           						 
+	  </div>
+	  
+	  <div class="six wide column">
+	  	
+	  </div>
+	  <div class="six wide column">
+	  	<div class="ui menu">
   
-            <a href="<?php echo base_url().'national';?>">   
-            <img style="display:inline-block;"  src="<?php echo base_url();?>assets/img/coat_of_arms_dash.png" class="img-responsive " alt="Responsive image" id="logo" ></a>
-            
-        </div>
-        
-        <div class="collapse navbar-collapse navbar-right">
-          <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="<?php echo base_url().'national';?>">Home</a></li>
-            <li class=""><a href="<?php echo base_url().'national/reports';?>">Reports</a></li>
-            <li class=""><a href="<?php echo base_url().'national/search';?>">Search</a></li>
-            <li class="" style="background: #144d6e; color: white;"><a style="background: #144d6e; color: white;" href="<?php echo base_url().'home';?>"><span class="glyphicon glyphicon-user"></span>Log in</a></li>
-                        
-                    </li>
-          </ul>
-          
-                                        
-        </div><!--/.nav-collapse -->
-
+  <div class="right menu">
+    <a class="active item">
+    <i class="home icon"></i> Home
+  </a>
+ 
+  <div class="ui dropdown item">
+      Log In <i class="dropdown icon"></i>
+      <div class="menu">
+        <a href="<?php echo base_url().'home';?>" class="item">HCMP</a>
+        <a href="" class="item">RTK</a>
       </div>
-    </div>
-    
-   <div class="container-fluid">
+  </div>
+  </div>
+</div>
+	  </div>
+	  	
+	  
 
-<div class="row-fluid">
-	
-	<div class="col-md-3 " style="padding-right: 0">
-		<div class="row-fluid" style="" id="notify" >
-		<div class="col-md-6">
-					<div class="color_g stat_item">
-						<span class="glyphicon glyphicon-user"></span>
-                  	HCW Trained <br/> <span id="hcw_trained"></span>
-                            
-                   </div>
-		</div>
-	<div class="col-md-6">
-					<div class="color_e stat_item">
-						<span class="glyphicon "></span>
-                 	Facilities Rolled Out <br/><span id="facilities_rolled_out"></span> 
-                            
-                   </div>
-	</div>
-	
-	
-	</div>
-	
-	
-	<div class="row-fluid" style="" id="" >
-		<div class="col-md-12 " style="">
-			<div class="tile" id="map" style="max-height: 400px;">
-						
+</div>
+
+<div class="ui stackable four column grid" style="max-height: 550px">
+
+			<div id="" class="five wide column" style="margin-top: 1%;">
+
+				<div class="tile"  style="max-height: 400px;">
+					<div class="tile-header">
+						National Over view
 					</div>
-			<div style="width:130px;margin-left:30%;padding:2%">
-            <div style="display:inline-block;width:10px;height:10px;background:#FFCC99">
-                
-            </div>
-            <div style="width:80px;display:inline-block;margin-left:5px;font-size:120%">
-            	Using HCMP
-            	</div>
-            </div>
+					<div id="map" style="max-height: 480px;"></div>
 					<script>
 					var map= new FusionMaps ("assets/FusionMaps/FCMap_KenyaCounty.swf","KenyaMap","100%","100%","0","0");
-					map.setJSONData(<?php echo $maps; ?>);
+					map.setJSONData(<?php echo $maps; ?>
+						);
 					
-    				map.render("map");
-    				
-                    </script>
-						
-		</div>
-	
-	</div>
-	
-	</div>
-	
-	<div class="col-md-9 " style="padding-left: 0;style="padding-right: 0"">
-		
-		<div class="row-fluid">
-			<div class="col-md-5" style="border: 0px solid #036;">
-				
-				<div class="tile" id="" style="height: 30px;border: 0px solid #036;">
-					<h4>Facilities In Numbers</h4>
-				</div>
-				
-				<div class="tile" id="facility_breakdown" style="height: 370px;border: 0px solid #036;">
-					
-				</div>
-				
-			</div>
-			
-			<div class="col-md-7" style="border: 0px solid #036;">
-				<div class="tile" id="filter" style="height: 70px;">
-					<h4>Stock Levels (M.O.S)</h4>
-					<button id="mosgraph" type="button" data-toggle="modal" data-target="#stockmosModal" class="btn btn-success btn-sm" style="margin:5 0 5 12; ">
-						Filter Options</button>
-				</div>
-				<div class="tile" id="mos" style="height: 400px">
-					
-				</div>
-			</div>
-		</div>
-		
-		
-	</div>
-	
-	
-	
-</div>
+						map.render("map");
 
-<div class="row-fluid">
-		
-		<div class="col-md-6" style="border: 0px solid #036;">
-			<div class="tile" id="" style="height: 70px;border: 0px solid #036;">
-				<h4>Consumption</h4>	
-				<button type="button" data-toggle="modal" data-target="#consumptionModal" class="btn btn-success btn-sm" style="margin:5 0 5 12; ">Other Options</button>
-				</div>
-			<div class="tile" id="consumption" style="height: 450px">
-				
-			</div>
-			
-		</div>
-		<div class="col-md-6" style="border: 0px solid #036;">
-			<div class="tile" id="" style="height: 70px;border: 0px solid #036;">
-					<h4>Expiries</h4>
-					<button type="button" data-toggle="modal" data-target="#actualeModal" class="btn btn-success btn-sm" style="margin:5 0 5 12; ">Filter Options</button>
+					</script>
 
 				</div>
-			<div class="tile" id="actual_ex" style="height: 450px">
-				
+
 			</div>
-			
-		</div>
-		
-	</div>
-	
-	<div class="row-fluid"style="margin-top: 12px;">
-		
-		
-		<div class="col-md-6" style="border: 0px solid #036;">
-			<div class="tile" id="" style="height: 70px;border: 0px solid #036;">
-				<h4>Cost Of Orders</h4>	
-				<button type="button" data-toggle="modal" data-target="#actualeModal" class="btn btn-success btn-sm" style="margin:5 0 5 12; ">Filter Options</button>
+
+			<div id="" class="eleven wide column " style="margin-top: 1%;height: 480px">
+
+				<div class="ui statistics ">
+					<div class="ui grid tile ">
+						<div class="tile-header">
+							National Statistics
+						</div>
+						<div class="four wide column">
+							<div class="statistic">
+								<div class="value">
+									522
+								</div>
+								<div class="label">
+									Total HCW Trained
+								</div>
+							</div>
+						</div>
+						<div class="four wide column">
+							<div class="statistic">
+								<div class="text value">
+									184
+								</div>
+								<div class="label">
+									Total Facilities Rolled Out
+								</div>
+							</div>
+						</div>
+						<div class="four wide column">
+							<div class="statistic">
+								<div class="value">
+									<i class="plane icon"></i> 5
+								</div>
+								<div class="label">
+									Avg Stock out days
+								</div>
+							</div>
+						</div>
+						<div class="three wide column">
+							<div class="statistic">
+								<div class="value">
+									57%
+								</div>
+								<div class="label">
+									Avg order fill rate
+								</div>
+
+							</div>
+
+						</div>
+						<div class="one wide column" style="padding:0.5%">
+							<div class="corner-label right" data-toggle="modal" data-target="#facilitystatsModal">
+
+								<div class="ion-chevron-right">
+									More
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+					<div class="ui grid">
+						<div class="tile" style="height: 420px">
+							<div class="" style="height: 50px; padding: 8px;margin: 0;">
+
+								<button data-toggle="modal" data-target="#expiriesModal" class="btn btn-xs btn-success test ">
+									<span class="icon icon-display"></span>More
+								</button>
+
+							</div>
+							<div id="expiries"></div>
+						</div>
+					</div>
+
 				</div>
-			<div class="tile" id="orders" style="height: 450px">
-				
+
 			</div>
-			
+
 		</div>
-		<div class="col-md-6" style="border: 0px solid #036;">
-			
-			<div class="tile" id="" style="height: 100px;border: 0px solid #036;">
-				<h4>Order Lead time</h4>
-					<div class="panel-heading">
-       <h3 class="panel-title">Fill Rate</h3>
-       </div>
-       <div id="fill_rate">
-            <div class="progress">
-    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 80%;">
-        80%
-    </div>
-      </div>
-       </div>
-				</div>
-			<div class="tile" id="leadtime" style="height: 250px">
-				
-			</div>
-				
-			</div>
-			
+<div class="ui horizontal divider" style="margin-top: 2.2%">
+			<i style="font-size: 16px;" class="fa fa-bar-chart-o"></i>
 		</div>
-	</div>
-	
-	
-</div>
+
    	
-  <!-- Modal -->
-<div class="modal fade" id="stockmosModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title" id="myModalLabel">Stock Levels (M.O.S)</h4>
-      </div>
-      <div class="modal-body">
-       <div class="">
-       	
-       </div>
-       <div id="mosmodalgraph">
-       	
-       </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- end Modal stockmosModal -->
+<div class="row-fluid ui stackable four column grid" style=" margin-top:1.2%;">
+			<div class="five wide column " style="height: 500px ;margin-right: 0">
+				<div class="" style="height: 50px; padding: 8px;margin: 0;">
 
-  <!-- Modal -->
-<div class="modal fade" id="consumptionModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- end Modal consumptionModal -->
+					<button data-toggle="modal" data-target="#mosModal" class="btn btn-sm btn-success ">
+						<span class="icon icon-display"></span>More
+					</button>
 
- <!-- Modal -->
-<div class="modal fade" id="orderModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- end Modal orderModal -->
-   
-   
-   
-   <script>
-   
-   ajax_fill_data('Kenya/facility_breakdown_pie',"#facility_breakdown");
-   ajax_fill_data('Kenya/mos_graph/NULL/NULL/NULL/NULL/NULL/mos',"#mos");
-   ajax_fill_data('Kenya/roll_out',"#roll_out");
-   ajax_fill_data('Kenya/consumption',"#consumption");
-   ajax_fill_data('national/expiry/NULL/NULL/NULL/NULL/NULL',"#actual_ex");
-   ajax_fill_data('Kenya/potential_expiries',"#potential_ex");
-   ajax_fill_data('national/order/NULL/NULL/NULL/NULL/NULL',"#orders");
-   ajax_fill_data('Kenya/write_dashboard_html',"#hcw_trained");
-   ajax_fill_data('Kenya/facility_over_view/',"#facilities_rolled_out");
-   ajax_fill_data('Kenya/get_lead_infor/NULL/NULL/NULL/NULL/NULL',"#leadtime");
-   
-   		 $("#mosgraph").click(function() {
-    	ajax_fill_modal('Kenya/mos_graph/NULL/NULL/NULL/NULL/NULL/mosmodalgraph',"#mosmodalgraph");
-    	});
-    	
-    	function ajax_fill_modal(function_url,div){
-        var function_url =url+function_url;
-        var loading_icon=url+"assets/img/Preloader_1.gif";
-        $.ajax({
-        type: "POST",
-        url: function_url,
-        beforeSend: function() {
-        $(div).html("<img style='margin:20% 40% 0 40%;' src="+loading_icon+">");
-        },
-        success: function(msg) {
-        $(div).html(msg);
-        }
-        });
-        }  
-   
-   function ajax_fill_data(function_url,div){
-        var function_url =url+function_url;
-        var loading_icon=url+"assets/img/Preloader_1.gif";
-        $.ajax({
-        type: "POST",
-        url: function_url,
-        beforeSend: function() {
-        $(div).html("<img style='margin:40% 50% 0 50%;' src="+loading_icon+">");
-        },
-        success: function(msg) {
-        $(div).html(msg);
-        }
-        });
-        }  
-        
-        function run(data){
-        var county_data=data.split('^');
-        $('.county-name').html(county_data[1]+"&nbsp;County &nbsp;");
-        ajax_fill_data('Kenya/facility_breakdown_pie/'+county_data[0],"#facility_breakdown");
-        ajax_fill_data('Kenya/facility_over_view/'+county_data[0],"#facilities_rolled_out");
-        ajax_fill_data('Kenya/write_dashboard_html/'+county_data[0],"#hcw_trained");
-        $('.county').val(county_data[0]);
-        $('#county_id').val(county_data[0]);
-        json_obj={"url":"<?php echo site_url("orders/getDistrict");?>",}
-        var baseUrl=json_obj.url;
-        dropdown(baseUrl,"county="+county_data[0],".subcounty");
-        ajax_fill_data('national/expiry/NULL/'+county_data[0]+'/NULL/NULL/NULL',"#actual_ex");
-        ajax_fill_data('Kenya/potential_expiries/'+county_data[0]+'/NULL/NULL/NULL/NULL',"#potential_ex"); 
-        ajax_fill_data('Kenya/mos_graph/'+county_data[0]+'/NULL/NULL/NULL/NULL/mos',"#mos");
-        ajax_fill_data('Kenya/consumption/'+county_data[0]+'/NULL/NULL/NULL',"#consumption");
-       // ajax_request_replace_div_content('national/get_facility_infor/'+county_data[0]+'/NULL/NULL/NULL',"#facilities");
-        ajax_fill_data('national/order/NULL/'+county_data[0]+'/NULL/NULL/NULL',"#orders");
-       // ajax_request_replace_div_content('national/get_lead_infor/NULL/'+county_data[0]+'/NULL/NULL/NULL',"#lead_infor");
-    } 
+				</div>
+				<div id="" class="tile"></div>
+			</div>
+			<div class="six wide column " style="height: 500px;margin-left: 0">
+				<div class="" style="height: 50px; padding: 8px;margin: 0;">
+
+					<button data-toggle="modal" data-target="#ordersModal" class="btn btn-sm btn-success ">
+						<span class="icon icon-display"></span>More
+					</button>
+
+				</div>
+				<div id="" class="tile"></div>
+			</div>
+			<div class="five wide column " style="height: 500px ;margin-right: 0">
+				<div class="" style="height: 50px; padding: 8px;margin: 0;">
+
+					<button data-toggle="modal" data-target="#consumptionModal" class="btn btn-sm btn-success ">
+						<span class="icon icon-display"></span>More
+					</button>
+
+				</div>
+				<div id="" class="tile"></div>
+			</div>
+
+		</div>
+
     
-        function dropdown(baseUrl,post,identifier){
-            /*
-             * ajax is used here to retrieve values from the server side and set them in dropdown list.
-             * the 'baseUrl' is the target ajax url, 'post' contains the a POST varible with data and
-             * 'identifier' is the id of the dropdown list to be populated by values from the server side
-             */
-            $.ajax({
-              type: "POST",
-              url: baseUrl,
-              data: post,
-              success: function(msg){
-                    var values=msg.split("_")
-                    var dropdown="<option value='NULL'>All</option>";
-                    for (var i=0; i < values.length-1; i++) {
-                        var id_value=values[i].split("*")
-                        dropdown+="<option value="+id_value[0]+">";
-                        dropdown+=id_value[1];
-                        dropdown+="</option>";
-                    };
-                    $(identifier).html(dropdown);
-              },
-              error: function(XMLHttpRequest, textStatus, errorThrown) {
-                   if(textStatus == 'timeout') {}
-               }
-            }).done(function( msg ) {
-            });
-        }
-         
-</script>
-    <!-- Bootstrap core JavaScript
+		<script>
+		$('.ui.dropdown').dropdown();
+					
+		</script>
+		
+		
+    <script>
+    
+    var url='<?php echo base_url(); ?>';
+    
+     $(document).ready(function () {
+						
+				$("#county_val").change(function() {
+			var option_value=$(this).val();
+    		if(option_value==''){
+    			$("#subcounty_val").hide('slow'); 
+    		}else{
+				var drop_down='';
+ 				var hcmp_facility_api = "<?php echo base_url(); ?>reports/get_sub_county_json_data/"+$("#county_val").val();
+ 				$.getJSON( hcmp_facility_api ,function( json ) {
+ 					$("#subcounty_val").html('<option  >Select Sub-county</option>');
+      				$.each(json, function( key, val ) {
+      					drop_down +="<option  value='"+json[key]["id"]+"'>"+json[key]["district"]+"</option>"; 
+      				});
+      				$("#subcounty_val").append(drop_down);
+    			});
+    			$("#subcounty_val").show('slow');  
+    			 
+    		}
+    	}); //end of district name change funtion
+    	$("#county_val2").change(function() {
+			var option_value=$(this).val();
+    		if(option_value==''){
+    			$("#subcounty_val2").hide('slow'); 
+    		}else{
+				var drop_down='';
+ 				var hcmp_facility_api = "<?php echo base_url(); ?>reports/get_sub_county_json_data/"+$("#county_val2").val();
+ 				$.getJSON( hcmp_facility_api ,function( json ) {
+ 					$("#subcounty_val2").html('<option  >Select Sub-county</option>');
+      				$.each(json, function( key, val ) {
+      					drop_down +="<option  value='"+json[key]["id"]+"'>"+json[key]["district"]+"</option>"; 
+      				});
+      				$("#subcounty_val2").append(drop_down);
+    			});
+    			$("#subcounty_val2").show('slow');  
+    			 
+    		}
+    	}); //end of district name change funtion
+				
+					//filter for statistics modal
+		$(".filterthis").click(function(e) {
+			
+          var countyvalue=$("#county_val2").val(); 
+          var subcountyvalue=$("#subcounty_val2").val();  
+          var piefiltervalue=$("#piefilter").val(); 
+              
+        ajax_request('Kenya/statistics_table/'+countyvalue+'/'+subcountyvalue+'/'+piefiltervalue+'/',"#datatable");
+        ajax_request('Kenya/statistics_pie/'+countyvalue+'/'+subcountyvalue+'/'+piefiltervalue+'/',"#pie");
+        
+        });
+        $(".mosfilter").click(function(e) {
+			
+          var countyvalue2=$("#county_val").val(); 
+          var subcountyvalue2=$("#subcounty_val").val() 
+          var commodity=$("#commodity_name").val() 
+              
+        ajax_request('Kenya/mos_graph/'+countyvalue2+'/'+subcountyvalue2+'/'+commodity+'/NULL/mosmodal',"#mosmodal");
+        
+        });
+        //ajax_request('kenya/mos_graph/NULL/NULL/NULL/NULL/mos',"#mos");
+        ajax_request('Kenya/consumption/NULL/NULL/NULL/NULL',"#consumption");
+        ajax_request('Kenya/orders/NULL/NULL/NULL/NULL/NULL',"#orders");
+        ajax_request('Kenya/expiry/NULL/NULL/NULL/NULL/NULL',"#expiries");
+     	
+     	function ajax_request(function_url,div){
+        var function_url =url+function_url;
+        var loading_icon=url+"assets/img/Preloader_2.gif";
+		        $.ajax({
+		        	type: "POST",
+		       		 url: function_url,
+		       			 beforeSend: function() {
+		       				 $(div).html("<img style='margin:25% 40% 20% 20%;' src="+loading_icon+">");
+		       				 },
+		       				 success: function(msg) {
+		       					 $(div).html(msg);
+		       		 }
+        		});
+        	}   
+     	});
+		
+	</script>	
+    <!-- core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script>
-    var url='<?php echo base_url(); ?>';
-    </script>
-  <script src="<?php echo base_url().'assets/boot-strap3/js/bootstrap.min.js'?>" type="text/javascript"></script>
-  <script src="<?php echo base_url('assets/scripts/county_sub_county_functions.js')?>" type="text/javascript"></script>
- <!--  <script src="<?php echo base_url();?>assets/FusionCharts/FusionCharts.js" type="text/javascript"></script>
-    <!-- Bootstrap core JavaScript===================== --> 
-  <script src="<?php echo base_url().'assets/scripts/jquery-ui-1.10.4.custom.min.js'?>" type="text/javascript"></script>
-  <script src="<?php echo base_url().'assets/scripts/highcharts.js'?>" type="text/javascript"></script>
-  <script src="<?php echo base_url().'assets/scripts/exporting.js'?>" type="text/javascript"></script>
-  <script src="<?php echo base_url().'assets/scripts/jquery.floatThead.min.js'?>" type="text/javascript"></script>  
-  <!-- Placed at the end of the document so the pages load faster -->
-  <script src="<?php echo base_url().'assets/scripts/hcmp_shared_functions.js'?>" type="text/javascript"></script>
-    <!--Datatables==========================  -->
-  <script src="<?php echo base_url().'assets/datatable/jquery.dataTables.min.js'?>" type="text/javascript"></script>    
-  <script src="<?php echo base_url().'assets/datatable/dataTables.bootstrap.js'?>" type="text/javascript"></script>
-  <script src="<?php echo base_url().'assets/datatable/TableTools.js'?>" type="text/javascript"></script>
-  <script src="<?php echo base_url().'assets/datatable/ZeroClipboard.js'?>" type="text/javascript"></script>
-  <script src="<?php echo base_url().'assets/datatable/dataTables.bootstrapPagination.js'?>" type="text/javascript"></script>
-  <!-- validation ===================== -->
-  <script src="<?php echo base_url().'assets/scripts/jquery.validate.min.js'?>" type="text/javascript"></script>
-  <link rel="stylesheet" type="text/css" href="<?php echo base_url().'assets/css/loadingbar.css'?>" />
-  <link rel="stylesheet" type="text/css" href="<?php echo base_url().'assets/css/elusive-webfont.css'?>" />
-</body></html>
+		<script src="<?php echo base_url('assets/scripts/county_sub_county_functions.js')?>" type="text/javascript"></script>
+		<!-- High Charts core JavaScript===================== -->
+		<script src="<?php echo base_url().'assets/scripts/highcharts.js'?>" type="text/javascript"></script>
+		<script src="<?php echo base_url().'assets/scripts/exporting.js'?>" type="text/javascript"></script>
+		<script src="<?php echo base_url().'assets/scripts/jquery.floatThead.min.js'?>" type="text/javascript"></script>
+		<!-- Placed at the end of the document so the pages load faster -->
+		
+		<!--Datatables==========================  -->
+		<script src="<?php echo base_url().'assets/datatable/jquery.dataTables.min.js'?>" type="text/javascript"></script>
+		<script src="<?php echo base_url().'assets/datatable/dataTables.bootstrap.js'?>" type="text/javascript"></script>
+		<script src="<?php echo base_url().'assets/datatable/TableTools.js'?>" type="text/javascript"></script>
+		<script src="<?php echo base_url().'assets/datatable/ZeroClipboard.js'?>" type="text/javascript"></script>
+		<script src="<?php echo base_url().'assets/datatable/dataTables.bootstrapPagination.js'?>" type="text/javascript"></script>
+		<!-- validation ===================== -->
+		<script src="<?php echo base_url().'assets/scripts/jquery.validate.min.js'?>" type="text/javascript"></script>
+		<link rel="stylesheet" type="text/css" href="<?php echo base_url().'assets/css/loadingbar.css'?>" />
+		<link rel="stylesheet" type="text/css" href="<?php echo base_url().'assets/css/elusive-webfont.css'?>" />
+
+</body>
+
+</html>

@@ -1,4 +1,3 @@
-<?php //echo "This is the one";exit; ?>
 <style>
  	.input-small{
  		width: 55px !important;
@@ -54,19 +53,19 @@ id="total_order_balance_value" readonly="readonly" value="<?php echo $drawing_ri
 						<th>Commodity&nbsp;Code</th>
 						<th>Order Unit Size</th>
 						<th>Order Unit Cost (Ksh)</th>
-						<th>Opening Balance</th>
-						<th>Total Receipts</th>
-					    <th>Total issues</th>
-					    <th>Adjustments(-ve)</th>
-					    <th>Adjustments(+ve)</th>
-					    <th>Losses</th>
-					    <th>No days out of stock</th>
-					    <th>Closing Stock</th>
+						<th>Opening Balance (units)</th>
+						<th>Total Receipts (units)</th>
+					    <th>Total issues (units)</th>
+					    <th>Adjustments(-ve) (units)</th>
+					    <th>Adjustments(+ve) (units)</th>
+					    <th>Losses (units)</th>
+					    <th>No days out of stock (units)</th>
+					    <th>Closing Stock (units)</th>
 					    <th>AMC (Packs)</th>
-					    <th>Suggested Order Quantity</th>
-					    <th>Order Quantity</th>
+					    <th>Suggested Order Quantity (units)</th>
+					    <th>Order Quantity (units)</th>
 					    <th>Actual Units</th>
-					    <th>Order Cost</th>	
+					    <th>Order Cost (units)</th>	
 					    <th>Comment (if any)</th>				    
 	</tr>
 </thead>
@@ -187,7 +186,6 @@ $(document).ready(function() {
 	 	alert("Please select a commodity first");
 	 	return;
 	 }
-
 	// add the items here to the order form
 	  $("#example" ).dataTable().fnAddData( [ 
   	 '<input type="hidden" class="commodity_name" id="commodity_name['+new_count+']" name="commodity_name['+new_count+']" value="'+$(".desc option:selected").text()+'" />'+
@@ -284,7 +282,6 @@ $(document).ready(function() {
     +'<button type="button" class="btn btn-primary" id="save_dem_order" data-dismiss="modal">Save</button>');
 	});
       /************save the data here*******************/
-
 	$('#main-content').on('click','#save_dem_order',function() {
      var order_total=$('#total_order_value').val();
      var workload=$('#workload').val();
@@ -324,7 +321,6 @@ $(document).ready(function() {
 	var order_total=0;
 	var balance=0
 	 $("input[name^=quantity]").each(function() {
-
 	 	if($(this).val()=='')
 	 	{ var total=0} 
 	 	else{ var total=$(this).val()
@@ -357,5 +353,4 @@ $(document).ready(function() {
 	}		
     
 });
-
 </script>

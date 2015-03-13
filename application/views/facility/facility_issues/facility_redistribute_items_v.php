@@ -42,16 +42,30 @@
 								<select name="district[0]" class="form-control input-small district" style="width:110px !important;">
 								<option value="0">Select Sub-county</option>
 								<?php 
-		foreach ($subcounties as $district) {
-			$id=$district->id;
-			$name=$district->district;		
-			echo '<option value="'.$id.'"> '.$name.'</option>';
-		}?>	
+								if ($district_store == 1) {//checks if accessed page is district store
+										echo '<option selected = "selected" value="'.$district_data['id'].'"> '.$district_data['district'].'</option>';
+								}else{
+									foreach ($subcounties as $district) {
+										$id=$district->id;
+										$name=$district->district;		
+										echo '<option value="'.$id.'"> '.$name.'</option>';
+									
+								}
+								}?>	
 								</select>
 							</td>
 							<td>
 						<select name="mfl[0]" class="form-control input-small facility" style="width:110px !important;">
-                       <option value="0">Select Facility</option>
+						<?php 
+								if ($district_store == 1) {//checks if accessed page is district store
+									echo "<option value='2'>District Store</option>";
+								}else{
+									echo "<option value='0'>Select Facility</option>";
+								}
+
+								?>	
+
+                       
 					   </select>
 						</td>
 						<td>

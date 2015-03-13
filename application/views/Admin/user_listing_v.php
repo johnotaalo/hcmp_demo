@@ -295,6 +295,39 @@
 									</div>
 								</div>
 								
+							<fieldset>
+									<legend style="font-size:1.5em">
+										Report Access
+									</legend>
+									<div class="row">
+										<div class="col-md-12">
+											<div class="form-group">
+											<table class="table table-bordered" style="font-size:1em;">
+												<tbody>
+												<tr>
+													<td><label for="all">All Reports</label></td>
+													<td><input type="checkbox" value= "1" name="all_reports" class="all_reports" id="all_reports"></td>
+												</tr>
+													<tr>
+														<td><label for="stocks">Stocks</label></td>
+														<td><input type="checkbox" name="stocks" class="stocks" id="stocks"></td>
+														<td><label for="stocks">Stocking Levels</label></td>
+														<td><input type="checkbox" name="stocking_levels" class="stocking_levels" id="stocking_levels"></td>
+														<td><label for="stocks">Consumption</label></td>
+														<td><input type="checkbox" name="consumption" class="consumption" id="consumption"></td>
+														<td><label for="stocks">Potential Expiries</label></td>
+														<td><input type="checkbox" name="potential_exp" class="potential_exp" id="potential_exp"></td>
+														<td><label for="stocks">Expiries</label></td>
+														<td><input type="checkbox" name="expiries" class="expiries" id="expiries"></td>
+													</tr>
+													<tr>
+													</tr>
+												</tbody>
+											</table>
+											</div>
+										</div>
+									</div>
+							</fieldset>
 
 								<div class="row" style="margin:auto" id="processing">
 									<div class=" col-md-12">

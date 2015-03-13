@@ -26,7 +26,7 @@
 			<th>Manufacturer</th>
 			<th>Balance(units)</th>
 			<th>Balance(packs)</th>
-			<th>Delete</th>	
+			<th>Remove</th>	
 		</tr>
 	</thead>
 	<tbody>

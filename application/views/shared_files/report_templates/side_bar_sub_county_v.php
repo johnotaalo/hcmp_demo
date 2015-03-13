@@ -1,6 +1,5 @@
 <?php 
 $identifier = $this -> session -> userdata('user_indicator');
-		
         switch ($identifier):
 			case 'district':
 			$link=	base_url('reports/order_listing/subcounty/true');
@@ -15,39 +14,8 @@ $identifier = $this -> session -> userdata('user_indicator');
 ?>
 
 <div class="panel-group " id="accordion" style="padding: 0;">
-                <div class="panel panel-default <?php echo $active_panel=='stocking_levels'? 'active-panel': null; ?>">
-                    <div class="panel-heading">
-                        <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" id="stocking_levels"><span class="glyphicon glyphicon-sort-by-attributes">
-                            </span>Stocking Levels</a>
-                        </h4>
-                    </div>
-                   <div id="collapseTwo" class="panel-collapse collapse <?php echo $active_panel=='stocking_levels'? 'in': null; ?>">
-                        <div class="panel-body">
-                            <table class="table">
-                                <tr>
-                                    <td>
-                  <a href="<?php echo base_url("reports") ?>">Actual Stocks</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                  <a href="<?php echo base_url("reports/stock_out") ?>">Stock Outs</a>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div> 
-                </div>
-                <div class="panel panel-default <?php echo $active_panel=='expiries'? 'active-panel': null; ?>">
-                    <div class="panel-heading">
-                        <h4 class="panel-title">
-                            <a  data-parent="#accordion" href="<?php echo base_url("reports/county_expiries") ?>" id="expiries"><span class="glyphicon glyphicon-trash">
-                            </span>Expiries</a>
-                        </h4>
-                    </div>
-                </div>
-                <div class="panel panel-default <?php echo $active_panel=='consumption'? 'active-panel': null; ?>">
+				<!--Consumption-->
+				<div class="panel panel-default <?php echo $active_panel=='consumption'? 'active-panel': null; ?>">
                     <div class="panel-heading">
                         <h4 class="panel-title">
                             <a  data-toggle="collapse" data-parent="#accordion" href="#collapsec" id="consumption"><span class="glyphicon glyphicon-cutlery">
@@ -71,15 +39,17 @@ $identifier = $this -> session -> userdata('user_indicator');
                         </div>
                     </div> 
                 </div>
-                 <div class="panel panel-default <?php echo $active_panel=='donations'? 'active-panel': null; ?>">
+                <!--Expiries-->
+                <div class="panel panel-default <?php echo $active_panel=='expiries'? 'active-panel': null; ?>">
                     <div class="panel-heading">
                         <h4 class="panel-title">
-                            <a  data-parent="#accordion" id="donations" href="<?php echo base_url("reports/county_donation") ?>" ><span class="glyphicon glyphicon-retweet">
-                            </span>Redistributions</a>
+                            <a  data-parent="#accordion" href="<?php echo base_url("reports/county_expiries") ?>" id="expiries"><span class="glyphicon glyphicon-trash">
+                            </span>Expiries</a>
                         </h4>
                     </div>
                 </div>
-                 <div class="panel panel-default <?php echo $active_panel=='orders'? 'active-panel': null; ?>">
+                <!--Orders-->
+                <div class="panel panel-default <?php echo $active_panel=='orders'? 'active-panel': null; ?>">
                     <div class="panel-heading">
                         <h4 class="panel-title">
                             <a  data-parent="#accordion" href="<?php echo $link; ?>" id="orders"><span class="glyphicon glyphicon-list-alt">
@@ -87,18 +57,54 @@ $identifier = $this -> session -> userdata('user_indicator');
                         </h4>
                     </div>
                 </div>
-              <div class="panel panel-default <?php echo $active_panel=='divisional'? 'active-panel': null; ?>">
+                <!--Program Reports
+                <div class="panel panel-default <?php echo $active_panel=='divisional'? 'active-panel': null; ?>">
                     <div class="panel-heading">
                         <h4 class="panel-title">
-                            <a data-parent="#accordion" href="<?php echo base_url("divisional_reports/program_reports"); ?>" id="program_reports"><span class="glyphicon glyphicon-folder-open">
+                            <a data-parent="#accordion" href="<?php echo base_url("divisional_reports/program_reports"); ?>" id="program_reports"><span class="glyphicon glyphicon-th-list">
                             </span>Program Reports</a>
                         </h4>
                     </div>
-                </div>
-                      <div class="panel panel-default <?php echo $active_panel=='system_usage'? 'active-panel': null; ?>">
+                </div>-->
+                <!--Redistributions-->
+                <div class="panel panel-default <?php echo $active_panel=='donations'? 'active-panel': null; ?>">
                     <div class="panel-heading">
                         <h4 class="panel-title">
-                            <a data-parent="#accordion" href="<?php echo base_url("reports/get_sub_county_facility_mapping_data"); ?>" id="system_usage"><span class="glyphicon glyphicon-sort">
+                            <a  data-parent="#accordion" id="donations" href="<?php echo base_url("reports/county_donation") ?>" ><span class="glyphicon glyphicon-retweet">
+                            </span>Redistributions</a>
+                        </h4>
+                    </div>
+                </div>
+                <!--Stocking Levels-->
+                <div class="panel panel-default <?php echo $active_panel=='stocking_levels'? 'active-panel': null; ?>">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" id="stocking_levels"><span class="glyphicon glyphicon-sort-by-attributes">
+                            </span>Stocking Levels</a>
+                        </h4>
+                    </div>
+                   <div id="collapseTwo" class="panel-collapse collapse <?php echo $active_panel=='stocking_levels'? 'in': null; ?>">
+                        <div class="panel-body">
+                            <table class="table">
+                                <tr>
+                                    <td>
+                  <a href="<?php echo base_url("reports/county_stock_level") ?>">Actual Stocks</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                  <a href="<?php echo base_url("reports/stock_out") ?>">Stock Outs</a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div> 
+                </div>
+                <!--System Usage-->
+                <div class="panel panel-default <?php echo $active_panel=='system_usage'? 'active-panel': null; ?>">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-parent="#accordion" href="<?php echo base_url("reports/get_sub_county_facility_mapping_data"); ?>" id="system_usage"><span class="glyphicon glyphicon-signal">
                             </span>System Usage</a>
                         </h4>
                     </div>

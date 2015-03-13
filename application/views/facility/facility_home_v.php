@@ -124,21 +124,36 @@
         <div style="height:auto; margin-bottom: 2px" class="issue message ">	 
         	<a href="<?php echo base_url("issues/index/internal") ?>"><h5>Issue Commodities to Service Points</h5></a>       	 
         </div>
-        <div style="height:auto; margin-bottom: 2px" class="distribute message ">
+        
+        <div style="height:auto; margin-bottom: 2px;color: #428bca !important;" class="distribute message " id="distribute_tab">
+            <h5>Redistribute Commodities to...</h5>
+        </div>
+         <div style="height:auto; margin-bottom: 2px" class="" id="distribute_hide">
+         	<a href="<?php echo base_url('issues/index/external'); ?>"><h5>Other Facilities</h5></a>	 
+           <a href="<?php echo base_url('issues/index/district_store'); ?>"><h5>District Store</h5></a>  
+        
+        </div>
+          
+       <!-- <div style="height:auto; margin-bottom: 2px" class="distribute message ">
         	<a href="<?php echo base_url('issues/index/external'); ?>"><h5>Redistribute Commodities to Other Facilities</h5></a>	 
         </div>
-    <!--    <div style="height:auto; margin-bottom: 2px" class="distribute message ">
+        <div style="height:auto; margin-bottom: 2px" class="distribute message ">
           <a href="<?php echo base_url('issues/index/district_store'); ?>"><h5>Redistribute Commodities to District Store</h5></a>   
-     </div>-->
+        </div>-->
         
  		<div style="height:auto; margin-bottom: 2px" class="distribute message ">
-        	<a href="<?php echo base_url('issues/confirm_external_issue')?>"><h5>Receive Commodities From Other Sources</h5></a>
+        	<a href="<?php echo base_url('issues/confirm_external_issue')?>"><h5>Receive Commodity From Other Facility (Redistributions)</h5></a>
         	 
-        </div> 
+        </div>
+       <!-- <div style="height:auto; margin-bottom: 2px" class="distribute message ">
+        	<a href="<?php echo base_url('issues/confirm_external_issue')?>"><h5>Receive Commodity From Other Sources</h5></a>
+        	 
+        </div> -->
          <div style="height:auto; margin-bottom: 2px;color: #428bca !important;" class="order message " id="order_tab">
-            <h5>Orders</h5>
+            <h5>Place an Order</h5>
         </div>
          <div style="height:auto; margin-bottom: 2px" class="" id="order_hide">
+            <a href="<?php echo base_url('reports/facility_transaction_data/1'); ?>"><h5>MEDS online</h5></a>
             <a href="<?php echo base_url('reports/facility_transaction_data/1'); ?>"><h5>KEMSA online</h5></a>
             <a href="" class="order-for-excel"><h5>KEMSA via excel</h5></a>
             
@@ -191,14 +206,19 @@
 
    		startIntro();
    	}
-   	
+   	//for hiding the tabs when the page loads
    	$('#update_order_hide').hide() 
        $('#order_hide').hide() 
+       $('#distribute_hide').hide()
 
        $('#order_tab').click(function(event) {
            /* Act on the event */
            $('#order_hide').toggle('slow')
        }); 
+       $('#distribute_tab').click(function(event) {
+           /* Act on the event */
+           $('#distribute_hide').toggle('slow')
+       });
        $('#update_order').click(function(event) {
            /* Act on the event */
            $('#update_order_hide').toggle('slow')

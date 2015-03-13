@@ -21,14 +21,14 @@
                         <th>Commodity&nbsp;Name</th>
                         <th>Commodity&nbsp;Code</th>
                         <th>Unit&nbsp;Size</th>
-                        <th>Opening&nbsp;Balance</th>
-                        <th>Total&nbsp;Receipts</th>
-                        <th>Total&nbsp;issues</th>
-                        <th>Adjustments(-ve)</th>
-                        <th>Adjustments(+ve)</th>
-                        <th>Losses</th>
-                        <th>Days out of stock</th>   
-                        <th>Closing Stock</th>
+                        <th>Opening&nbsp;Balance (units)</th>
+                        <th>Total&nbsp;Receipts (units)</th>
+                        <th>Total&nbsp;issues (units)</th>
+                        <th>Adjustments(-ve) (units)</th>
+                        <th>Adjustments(+ve) (units)</th>
+                        <th>Losses (units)</th>
+                        <th>Days out of stock (units)</th>   
+                        <th>Closing Stock (units)</th>
 		</tr>
 	</thead>
 	<tbody>

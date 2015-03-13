@@ -12,7 +12,7 @@
         <input type="hidden" id="stocklevel" value="<?php echo $district_dashboard_notifications['facility_stock_count'] ?>" readonly/>
           <?php if($district_dashboard_notifications['facility_donations']>0): ?>
          <div style="height:auto; margin-bottom: 2px" class="warning message ">       
-        <h5>Inter Facility Donation</h5> 
+        <h5>Facility Donation</h5> 
           <p>
       <a class="link" href="<?php echo base_url('issues/confirm_store_external_issue/to-me') ?>"><span class="badge"><?php 
         echo $district_dashboard_notifications['facility_donations'];?></span> Items have been donated to you</a> 
@@ -51,6 +51,9 @@
        <?php if($district_dashboard_notifications['district_stock_count']>0): ?>
         <div style="height:auto; margin-bottom: 2px" class="distribute message ">
           <a href="<?php echo base_url('issues/district_store'); ?>"><h5>Redistribute Commodities to Facilities</h5></a>   
+        </div>  
+        <div style="height:auto; margin-bottom: 2px" class="distribute message ">
+          <a href="<?php echo base_url('issues/district_store_internal'); ?>"><h5>Redistribute Commodities to Other District Stores</h5></a>   
         </div>        
          <div style="height:auto; margin-bottom: 2px" class="reports message ">
           <a href="<?php echo base_url("reports/district_store_reports") ?>"><h5>Reports</h5></a>        

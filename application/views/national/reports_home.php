@@ -8,7 +8,8 @@
     <!-- Bootstrap core CSS -->  
     <link rel="icon" href="<?php echo base_url().'assets/img/coat_of_arms.png'?>" type="image/x-icon" />
     <link href="<?php echo base_url().'assets/css/style.css'?>" type="text/css" rel="stylesheet"/> 
-    <link href="<?php echo base_url().'assets/css/offline.css'?>" type="text/css" rel="stylesheet"/> 
+    <link href="<?php echo base_url().'assets/css/offline-theme-default.css'?>" type="text/css" rel="stylesheet"/> 
+    <link href="<?php echo base_url().'assets/css/styles.css'?>" type="text/css" rel="stylesheet"/>
     <link href="<?php echo base_url().'assets/css/select2.css'?>" type="text/css" rel="stylesheet"/> 
     <link href="<?php echo base_url().'assets/css/offline-language-english.css'?>" type="text/css" rel="stylesheet"/>  
     <link href="<?php echo base_url().'assets/css/normalize.css'?>" type="text/css" rel="stylesheet"/>
@@ -24,6 +25,7 @@
     <script src="<?php echo base_url();?>assets/FusionCharts/FusionCharts.js" type="text/javascript"></script>
      <script src="<?php echo base_url().'assets/scripts/pace.js'?>" type="text/javascript"></script>
      <script src="<?php echo base_url().'assets/scripts/offline.js'?>" type="text/javascript"></script>
+    <script src="<?php echo base_url().'assets/scripts/offline-simulate-ui.min.js'?>" type="text/javascript"></script>
      <script src="<?php echo base_url().'assets/scripts/select2.js'?>" type="text/javascript"></script>
     <title>HCMP | National</title>
 <script>
@@ -114,8 +116,15 @@ legend{
             <li class=""><a href="<?php echo base_url().'national';?>">Home</a></li>
             <li class="active"><a href="<?php echo base_url().'national/reports';?>">Reports</a></li>
             <li class=""><a href="<?php echo base_url().'national/search';?>">Search</a></li>
-            <li class="" style="background: #144d6e; color: white;"><a style="background: #144d6e; color: white;" href="<?php echo base_url().'home';?>"><span class="glyphicon glyphicon-user"></span>Log in</a></li>
-            
+            <li class="dropdown" style="background: #144d6e; color: white;">
+     		<a href="#" class="dropdown-toggle" style="color:white" data-toggle="dropdown" role="button" aria-expanded="false">Log In <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+              	<li role="presentation"><a role="menuitem" tabindex="-1" href="<?php echo base_url().'home';?>"><span class="glyphicon glyphicon-user"></span>Essential Commodities</a></li>
+                <li role="presentation" class="divider"></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="http://41.89.6.223/HCMP/user"><span class="glyphicon glyphicon-user"></span>RTK</a></li>
+                
+              </ul>
+            </li>
           </ul>
           
                                         

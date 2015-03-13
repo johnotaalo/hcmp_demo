@@ -63,6 +63,10 @@
 </div>
 <script>
 $(document).ready(function() {	
+	window.onbeforeunload = function() {
+        return "Are you sure you want to leave?";
+    }
+    
 	//datatables settings 
 	$('#example').dataTable( {
 		   "sDom": "T lfrtip",

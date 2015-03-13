@@ -32,7 +32,7 @@ $earliest_year = $current_year - 10;
                    "bPaginate": false,
                   "sDom": '<"H"Tfr>t<"F"ip>',
 					"oTableTools": {
-			"sSwfPath": "<?php echo base_url(); ?>DataTables-1.9.3/extras/TableTools-2.0.0/media/swf/copy_cvs_xls_pdf.swf"
+			"sSwfPath": "<?php echo base_url(); ?>assets/datatable/extras/TableTools-2.0.0/media/swf/copy_cvs_xls_pdf.swf"
 		}
 				} );
 			} );

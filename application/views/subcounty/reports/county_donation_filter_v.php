@@ -42,7 +42,7 @@ endforeach;
 <select id="facility_filter" class="form-control col-md-2">
 <option value="NULL">Select facility</option>
 </select>	
-<div class="col-md-1">
+<div class="col-md-2">
 <button class="btn btn-sm btn-success filter" id="filter" name="filter"><span class="glyphicon glyphicon-filter"></span>Filter</button> 
 </div> 
 </form>
@@ -50,20 +50,27 @@ endforeach;
 </div>
 </div>
 <div class="graph_content">	
-<div class="graph_content" id="dem_graph_1"  ></div>
+<div class="graph_content" id="dem_graph_"  ></div>
 </div>
 <script>
 
 $(window).load(function(){
-		var year  = '<?php echo $year; ?>';
+		
         var url_ = "reports/donation_reports/"+
-        year+
+        "<?php echo $year; ?>"+
         "/NULL"+
         "/NULL";	
 		ajax_request_replace_div_content(url_,'.graph_content');	
 	
 
 });	
+	var year  = '<?php echo $year; ?>';
+	$.get("reports/donation_reports/"+year+"/NULL"+"/NULL", function(data){
+		$("#dem_graph_").html(data);
+		
+		
+	});
+	
 	$(document).ready(function() {
 			$('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
           $('.graph_content').html('');

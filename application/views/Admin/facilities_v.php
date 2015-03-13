@@ -96,12 +96,11 @@
     $(".activate_facility").click(function(e){
         e.preventDefault();
 
-        var facility_id = $(".lucky_facility").val();
-        var facility_status = $(".lucky_facility option:selected").attr("class");
+        var facility_id = $("#lucky_facility").val();
+        var facility_status = $("#lucky_facility option:selected").attr("class");
         // data-facility-status
         // alert(facility_id);
         // alert(facility_status);
-
         $.ajax({
           type:'POST',
           url:"deactivate_facility"
@@ -126,9 +125,55 @@
 
 
 
+$('.dataTables_filter label input').addClass('form-control');
+  $('.dataTables_length label select').addClass('form-control');
+$('#datatable').dataTable( {
+     "sDom": "T lfrtip",
+       "sScrollY": "320px",   
+                    "sPaginationType": "bootstrap",
+                    "oLanguage": {
+                        "sLengthMenu": "_MENU_ Records per page",
+                        "sInfo": "Showing _START_ to _END_ of _TOTAL_ records",
+                    },
+            "oTableTools": {
+                 "aButtons": [
+        "copy",
+        "print",
+        {
+          "sExtends":    "collection",
+          "sButtonText": 'Save',
+          "aButtons":    [ "csv", "xls", "pdf" ]
+        }
+      ],
+      "sSwfPath": "<?php echo base_url(); ?>assets/datatable/media/swf/copy_csv_xls_pdf.swf"
+    }
+    
+  } ); 
+  $('div.dataTables_filter input').addClass('form-control search');
+  $('div.dataTables_length select').addClass('form-control');
+
+    
+    oTable = $('#datatable').dataTable();
+      
+      $('#active').click(function () {
+        
+        oTable.fnFilter('active');
+      })
+      
+      $('#inactive').click(function () {
+        
+        oTable.fnFilter('deactivated');
+    
+      })
 
     
 	});
-	
+	// end of data table function
+  $(".lucky_facility").select2({
+    placeholder: "-000-",
+    allowClear: true,
+    minimumInputLength: 3,
+    escapeMarkup: function(m) { return m; }
+  });
 	
 </script>

@@ -1,4 +1,14 @@
 <div class="panel-group " id="accordion" style="padding: 0;">
+	<!--Consumption Reports-->
+	<div class="panel panel-default <?php echo $active_panel=='consumption'? 'active-panel': null; ?>">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a  data-parent="#accordion" id="consumption" href="<?php echo base_url("reports/consumption"); ?>"><span class="glyphicon glyphicon-bookmark">
+                </span>Consumption</a>
+            </h4>
+        </div>
+    </div>
+    <!--Expiries Report-->
     <div class="panel panel-default <?php echo $active_panel=='expiries'? 'active-panel': null; ?>">
         <div class="panel-heading">
             <h4 class="panel-title">
@@ -11,7 +21,7 @@
                 <table class="table">
                     <tr>
                         <td>
-                            <a href="<?php echo base_url().'reports' ?>">Potential Expiries</a>
+                            <a href="<?php echo base_url().'reports/potential_expiries' ?>">Potential Expiries</a>
                         </td>
                     </tr>
                     <tr>
@@ -30,6 +40,25 @@
             </div>
         </div>
     </div>
+    <!--Program Reports Accordion-->
+    <div class="panel panel-default <?php echo $active_panel=='divisional'? 'active-panel': null; ?>">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-parent="#accordion" href="<?php echo base_url("divisional_reports/program_reports"); ?>" id="divisional_reports"><span class="glyphicon glyphicon-th-list">
+                </span>Program Reports</a>
+            </h4>
+        </div>
+    </div>
+    <!--Stock Control Card-->
+    <div class="panel panel-default <?php echo $active_panel=='stock_control_card'? 'active-panel': null; ?>">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a  data-parent="#accordion" id="stock_control_card" href="<?php echo base_url("reports/stock_control"); ?>"><span class="glyphicon glyphicon-calendar">
+                </span>Stock Control Card</a>
+            </h4>
+        </div>
+    </div>
+    <!--Stocking Levels Report-->
     <div class="panel panel-default <?php echo $active_panel=='stocking_levels'? 'active-panel': null; ?>">
         <div class="panel-heading">
             <h4 class="panel-title">
@@ -39,6 +68,15 @@
         </div>
      
     </div>
+    <!--System Usage Tab-->
+    <div class="panel panel-default <?php echo $active_panel=='system_usage'? 'active-panel': null; ?>">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a  data-parent="#accordion" id="system_usage" href="<?php echo base_url("reports/facility_mapping"); ?>"><span class="glyphicon glyphicon-signal">
+                </span>System Usage</a>
+            </h4>
+        </div>
+    </div>
     <!--<div class="panel panel-default <?php echo $active_panel=='orders'? 'active-panel': null; ?>">
         <div class="panel-heading">
             <h4 class="panel-title">
@@ -47,16 +85,7 @@
             </h4>
         </div>
     </div>-->
-    <div class="panel panel-default <?php echo $active_panel=='consumption'? 'active-panel': null; ?>">
-        <div class="panel-heading">
-            <h4 class="panel-title">
-                <a  data-parent="#accordion" id="consumption" href="<?php echo base_url("reports/consumption"); ?>"><span class="glyphicon glyphicon-bookmark">
-                </span>Consumption</a>
-            </h4>
-        </div>
-    </div>
     <!--Divisional Reports Accordion-->
-  
     <!--<div class="panel panel-default <?php echo $active_panel=='statistics'? 'active-panel': null; ?>">
         <div class="panel-heading">
             <h4 class="panel-title">
@@ -115,22 +144,7 @@
         </div>
         
     </div>-->
-    <div class="panel panel-default <?php echo $active_panel=='stock_control_card'? 'active-panel': null; ?>">
-        <div class="panel-heading">
-            <h4 class="panel-title">
-                <a  data-parent="#accordion" id="stock_control_card" href="<?php echo base_url("reports/stock_control"); ?>"><span class="glyphicon glyphicon-calendar">
-                </span>Stock Control Card</a>
-            </h4>
-        </div>
-    </div>
-    <div class="panel panel-default <?php echo $active_panel=='system_usage'? 'active-panel': null; ?>">
-        <div class="panel-heading">
-            <h4 class="panel-title">
-                <a  data-parent="#accordion" id="system_usage" href="<?php echo base_url("reports/get_sub_county_facility_mapping_data"); ?>"><span class="glyphicon glyphicon-sort">
-                </span>System Usage</a>
-            </h4>
-        </div>
-    </div>
+    
     
 </div>
 

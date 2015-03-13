@@ -162,7 +162,7 @@ HTML_DATA;
 <div class="col-md-2" style="border: 1px solid #DDD; padding: 0">
 <div style= "overflow-y: auto;">
 	<legend>
-			Orders Summary
+		Summary
 		</legend>
 
 <table class="row-fluid table table-hover table-bordered table-update">

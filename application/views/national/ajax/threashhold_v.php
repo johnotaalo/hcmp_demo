@@ -42,13 +42,13 @@
             enabled: false
         },
         series: [{
-            name: 'Required M.O.S',
+            name: 'AMC',
             color: '#F7D358',
-            data: [9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9],
+            data: <?php echo $series_data2 ;?>,
             pointPadding: 0.1,
             pointPlacement: -0.2
         }, {
-            name: 'Actual M.O.S',
+            name: 'M.O.S',
             color: 'rgba(186,60,61,.9)',
             data: <?php echo $series_data ;?>,
             pointPadding: 0.4,

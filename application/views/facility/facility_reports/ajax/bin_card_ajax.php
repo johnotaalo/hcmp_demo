@@ -72,7 +72,7 @@ border: 1px solid #FFF !important;
   </tr>
   </thead>    
     <tbody>   
-     <?php   
+      <?php   
              foreach ($bin_card as $bin ) { 
                 $bin['unit_size'];
                 $formatdate = strtotime($bin['date_issued']) ? new DateTime($bin['date_issued']) : 'N/A';
@@ -110,17 +110,17 @@ border: 1px solid #FFF !important;
                  }   
 
                   if ($bin['s11_No']=='initial stock update') {
-                  	$s_point=$bin['service_point_name'];
-					$s_point='Store';
+                    $s_point=$bin['service_point_name'];
+          $s_point='Store';
                 $color="red";
                 $formated_date_exp="N/A";
                  }elseif ($bin['s11_No']=='(+ve Adj) Stock Addition') {
                    $color="red";
-				   $s_point='Store';
+           $s_point='Store';
                  }
                  else{
                   $color="black";
-				  $s_point=$bin['service_point_name'];
+          $s_point=$bin['service_point_name'];
                  }
                ?>
         
@@ -164,6 +164,9 @@ border: 1px solid #FFF !important;
              
                
           ?>  
+     
+     
+     
    </tbody>
 </table>
   </div>

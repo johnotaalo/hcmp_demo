@@ -98,7 +98,12 @@ To add facility stock data, first do physical stock count</strong></p></div>
 <?php echo form_close(); ?>
 
 <script type="text/javascript">
-    $(document).ready(function() {  
+    $(document).ready(function() {
+    	
+    	window.onbeforeunload = function() {
+        return "Are you sure you want to leave?";
+    }
+   
 
  var $table = $('table');
 //float the headers

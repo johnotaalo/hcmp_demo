@@ -180,6 +180,10 @@
 
     <script type="text/javascript">
         $(document).ready(function() {
+        	window.onbeforeunload = function() {
+        return "Are you sure you want to leave?";
+    }
+   
             changeHashOnLoad();
 
         setTimeout(function () {

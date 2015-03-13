@@ -4,7 +4,7 @@
 
 	};
 </style>
-<div class="container" style="width: 96%; margin: auto;">
+<div class="container" style="width: 100%; margin: auto;">
 	
 <div class="table-responsive">
 	<?php 
@@ -13,159 +13,69 @@
 		echo form_open('divisional_reports/save_malaria_report',$att); 
 	
 	?>
-	<!--
-	<div class="report-info">
-	<h2>Malaria Report</h2>
-	<h3><?php //echo $facility_name; ?></h3>
-	<h4><?php //echo $facility_code; ?></h4>
-	<h5><?php //echo $user_names; ?></h5>
-	</div>
-	-->
-
-	<div  style="margin:5px 0;">
-		<p class="label label-info">Enter appropriate values in all fields as indicated: </p>
-	</div>
-
-	<table width="98%" border="0" class="table-condensed row-fluid table table-hover table-bordered table-update"  id="example">
-		<tr>
-		<div class="input-group">
-
-		<td  class="col-xs-3">
-			<label>Facility Name: </label>
-			<input type="text" name="facility_name" class="form-control" disabled value="<?php echo $facility_name; ?>">
-		</td>			
-		
-		<td  class="col-xs-2">
-		<label>Facility Code: </label>
-			<input type="text" name="facility_code: " class="form-control" disabled value="<?php echo $facility_code; ?>">
-		</td>
-
-		<td class="col-xs-3">
-		<label>User Name: </label>
-			<input type="text" name="facility_code: " class="form-control" disabled value="<?php echo $user_names; ?>">	
-		</td>
-
-		<td  class="col-xs-1">
-			<label>Report Date:</label>
-
-			<!-- <input type= 'date' name="district_name" class="form-control" value=""> -->
-			<input type="text" class="form-control clone_datepicker_normal_limit_today"  name="district_name" value="<?php echo date('d M Y'); ?>" />
-			</td>
-		</div>
-
-		</tr>
-	</table>
-
-	<table width="98%" border="0" class="row-fluid table table-hover table-bordered table-update"  id="example">
-	<thead style="background-color: white">
-
-<!-- second row -->
-		
-
+	<table width="98%" border="0" class="row-fluid table table-hover table-bordered table-update"  id="example2">
+	<thead>
 		<tr>
 			<th>Drug Name</th>
-			<th>Beginning Balance</th>
-			<th>Quantity Received</th>
-			<th>Quantity Dispensed</th>
-			<th>Losses Excluding Expiries</th>
-			<th>Positive Adjustments</th>
-			<th>Negative Adjustments</th>
-			<th>Physical Count</th>
-			<th>Expired Drugs</th>
-			<th>Stock Out Days</th>
-			<th>Total</th>
-			
-					    
+			<th>Unit Size</th>
+			<th>Unit Cost (Ksh)</th>
+			<th>Opening Balance (Units)</th>
+			<th>Total Receipts (Units)</th>
+		    <th>Total issues (Units)</th>
+		    <th>Adjustments(-ve) (Units)</th>
+		    <th>Adjustments(+ve) (Units)</th>
+		    <th>Losses (Units)</th>
+		    <th>No days out of stock</th>
+		    <th>Closing Stock(Units)</th>					    
 		</tr>
 	</thead>
 	<tbody><?php
-	//Used to puck the Kemsa code from the malaria drugs table in order to save it in the Malaria Data table
-	$code = "";
-	foreach ($malaria_data as $row)
-	{
-		extract($row, EXTR_OVERWRITE);
-		$code .= $kemsa_code. " ";
-	
-	}
-	$code1 = explode(" ", $code);
-	$counter = 0;
-	foreach($drug_rows as $drug)
-	{		
-		echo"
-		<tr row_id='0'>
-		<td>".$drug['drug_name']."</td>
-		<td>
-			<input type='text' class='form-control input-small Beginning_Balance' name='Beginning_Balance[".$counter."]' required='required' required='required'/>
-		</td>
-	    <td>
-	    	<input type='text' class='form-control input-small Quantity_Received' name='Quantity_Received[".$counter."]'' required='required' required='required'/>
-	    </td>
-	    <td>
-	    	<input type='text' class='form-control input-small Quantity_Dispensed' name='Quantity_Dispensed[".$counter."]'' required='required' required='required'/>
-	    </td>
-	    <td>
-	    	<input type='text' class='form-control input-small Losses_Excluding_Expiries' name='Losses_Excluding_Expiries[".$counter."]'' required='required' required='required'/>
-	    </td>
-	    <td>
-	    	<input type='text' class='form-control input-small Positive_Adjustments' name='Positive_Adjustments[".$counter."]'' required='required' required='required'/>
-	    </td>
-	    <td>
-	    	<input type='text' class='form-control input-small Negative_Adjustments' name='Negative_Adjustments[".$counter."]'' required='required' required='required'/>
-	    </td>
-	    <td>
-	    	<input type='text' class='form-control input-small Physical_Count' name='Physical_Count[".$counter."]'' required='required'/>
-	    </td>
-	    <td>
-	    	<input type='text' class='form-control input-small Expired_Drugs' name='Expired_Drugs[".$counter."]'' required='required'/>
-	    </td>
-	    <td>
-	    	<input type='text' class='form-control input-small Days_Out_Stock' name='Days_Out_Stock[".$counter."]'' required='required'/>
-	    </td>
-	    <td>
-	    	<input type='text' class='form-control input-small Report_Total' name='Total[".$counter."]'' required='required'/>
-	    </td>
-	    <td style='display:none;'>
-	    	<input type='hidden' class='kemsa' name='kemsa[".$counter."]'' value='".$code1[$counter]."'/>
-	    </td>
-	    ";
-	    $counter++;
-		
-	};?>
+		echo $malaria_data;
+	?>
 		     </tbody>
 		   </table>
 </div>
 <hr />
 <div class="container-fluid" style="clear:both;">
 <div style="float: right">
-<button class="save btn btn-sm btn-success"><span class="glyphicon glyphicon-open"></span>Save</button></div>
+<!-- <button class="save btn btn-sm btn-success"><span class="glyphicon glyphicon-open"></span>Save</button></div>-->
 </div>
 </div>
 <?php echo form_close();?>
 <script>
 $(document).ready(function() {	
 	//datatables settings 
-	$('#example').dataTable( {
-		 //"sDom": "T<'clear'>lfrtip",
-	     "sScrollY": "377px",
+	$('#example2').dataTable( {"sDom": "T lfrtip",
+	     "sScrollY": "310px",
 	     "sScrollX": "100%",
                     "sPaginationType": "bootstrap",
                     "oLanguage": {
                         "sLengthMenu": "_MENU_ Records per page",
                         "sInfo": "Showing _START_ to _END_ of _TOTAL_ records",
+                        "sEmptyTable": "No report for this facility",
                     },
-			     
+			      "oTableTools": {
+                 "aButtons": [
+				"copy",
+				"print"
+			],
+
+			"sSwfPath": "<?php echo base_url(); ?>assets/datatable/media/swf/copy_csv_xls_pdf.swf"
+		}
+
 	} );
-	$('#example_filter label input').addClass('form-control');
-	$('#example_length label select').addClass('form-control');
- var $table = $('table');
+
+	$('#example2_filter label input').addClass('form-control');
+	$('#example2_length label select').addClass('form-control');
+ // var $table = $('#example2');
 //float the headers
-  $table.floatThead({ 
-	 scrollingTop: 100,
-	 zIndex: 1001,
-	 scrollContainer: function($table){ return $table.closest('.table-responsive'); }
-	});	
+ //  $table.floatThead({ 
+	//  scrollingTop: 100,
+	//  zIndex: 1001,
+	//  scrollContainer: function($table){ return $table.closest('.table-responsive'); }
+	// });	
 //step one load all the facility data here
-var facility_stock_data=<?php echo $facility_stock_data;     ?>;
+var facility_stock_data="<?php echo $facility_stock_data;     ?>";
             ///when changing the commodity combobox
       		$(".desc").on('change',function(){
       		var row_id=$(this).closest("tr").index();	

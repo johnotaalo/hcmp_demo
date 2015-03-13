@@ -1,3 +1,6 @@
+<!--<script src="<?php echo base_url().'assets/scripts/jquery.js'?>" type="text/javascript"></script>
+
+<script src="<?php echo base_url().'assets/scripts/highcharts.js'?>" type="text/javascript"></script>-->
  <script>
     $(function () {
 
@@ -5,14 +8,14 @@
     	
     
         // Build the chart
-        $('#facility_breakdown').highcharts({
+        $('#pie').highcharts({
             chart: {
                 plotBackgroundColor: null,
                 plotBorderWidth: null,
                 plotShadow: false
             },
             title: {
-                text: 'Health Facilities In Numbers'
+                text: 'Health Facilities Statistics'
             },
             colors: <?php echo $colors; ?>,
             plotOptions: {
@@ -31,13 +34,10 @@
         },
             series: [{
                 type: 'pie',
-                name: 'In Numbers',
-                data: [ ['Public',   <?php echo $public ;?>], 
-		                ['Private', <?php echo $private ;?>],
-		                ['Faith-Based',  <?php echo $fbo ;?>], 
-		                ['Others',    <?php echo $other;?>] 
+                name: 'No of Facilities',
+                data:  <?php echo $temp; ?>
                 
-                 ]
+                 
                 
             }]
         });
@@ -45,5 +45,6 @@
 
 });
 </script>
+<!--<div id="pie"></div>__>
 
 
